@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>调查表</title>
+    <style type="text/css">
+        .style1
+        {
+            height: 35px;
+        }
+        #Button1
+        {
+            width: 155px;
+            height: 24px;
+            margin-top: 13px;
+        }
+        .style2
+        {
+            width: 211px;
+            height: 44px;
+        }
+        .style3
+        {
+            height: 35px;
+            width: 211px;
+        }
+        .style4
+        {
+            height: 36px;
+        }
+        .style5
+        {
+            width: 211px;
+            height: 36px;
+        }
+        .style6
+        {
+            height: 44px;
+        }
+        #Text1
+        {
+            height: 35px;
+        }
+        #Text2
+        {
+            height: 29px;
+        }
+        #Text3
+        {
+            height: 27px;
+        }
+        #Text4
+        {
+            height: 30px;
+        }
+        #Text5
+        {
+            height: 26px;
+        }
+        #Button2
+        {
+            width: 151px;
+            height: 30px;
+        }
+        #SumA
+        {
+            height: 30px;
+            margin-top: 0px;
+        }
+        #SumB
+        {
+            height: 27px;
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+
+
+        function Button1_onclick() {
+            var int1 = document.getElementById("AText1").innerHTML;
+            var int2 = document.getElementById("AText2").innerHTML;
+            var int3 = document.getElementById("AText3").innerHTML;
+            var int4 = document.getElementById("AText4").innerHTML;
+            var int5 = document.getElementById("AText5").innerHTML;
+            var sumA = document.getElementById("SumA");
+            sumA.value = parseInt(int1) + parseInt(int2) + parseInt(int3) + parseInt(int4) + parseInt(int5);
+
+        }
+
+        function Button2_onclick() {
+
+            var int1 = document.getElementById("BText1").value;
+            var int2 = document.getElementById("BText2").value;
+            var int3 = document.getElementById("BText3").value;
+            var int4 = document.getElementById("BText4").value;
+            var int5 = document.getElementById("BText5").value;
+            var sum2 = document.getElementById("SumB");
+            sum2.value = parseInt(int1) + parseInt(int2) + parseInt(int3) + parseInt(int4) + parseInt(int5);
+        }
+
+
+    </script>
+</head>
+<body style="height: 542px">
+
+    <table style="width: 69%; height: 302px;" bgcolor="#FFFFCC" border="1">
+        <caption><h1>Java工资调查表</h1></caption>　
+
+        <tr>
+            <td align="center" class="style4">
+                月收入</td>
+            <td align="center" class="style4">
+                <br />
+                A地区人数<br />
+            </td>
+            <td align="center" class="style4">
+                B地区人数</td>
+           
+        </tr>
+        <tr>
+            <td class="style6" align="center">
+                1000元</td>
+            <td class="style2" id="AText1" align="center" >
+                2002</td>
+            <td align="center" class="style3">
+                <input id="BText1" type="text" /></td>
+        </tr>
+        <tr>
+            <td class="style1" align="center">
+                1000-3000元</td>
+            <td class="style3" id="AText2" align="center">
+                2000</td>
+            <td class="style1" align="center">
+                <input id="BText2" type="text" /></td>  
+        </tr>
+        <tr>
+            <td class="style1" align="center">
+                3100-5000元</td>
+            <td class="style3" id="AText3" align="center">
+                6542</td>
+            <td class="style1" align="center">
+                <input id="BText3" type="text" /></td>  
+        </tr>
+        <tr>
+            <td class="style1" align="center">
+                5100-10000元</td>
+            <td class="style3" id="AText4" align="center">
+                32132</td>
+            <td class="style1" align="center">
+                <input id="BText4" type="text" /></td>  
+        </tr>
+        <tr>
+            <td class="style1" align="center">
+                10000元以上</td>
+            <td class="style3" id="AText5" align="center">
+                789</td>
+            <td class="style1" align="center">
+                <input id="BText5" type="text" /></td>  
+        </tr>
+    </table>
+
+    <p>
+        <input id="Button1" type="button" value="计算A区人数" onclick="Button1_onclick()" />  
+        A地区人数:<input id="SumA" type="text" /></p>
+
+    
+    <p align="left">
+        <input id="Button2" type="button" value="计算B区人数" onclick="return Button2_onclick()" />
+        B地区人数:<input id="SumB" type="text" /></p>
+   
+
+</body>
+</html>

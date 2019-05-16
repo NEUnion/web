@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .style1
+        {
+            width: 504px;
+        }
+        #Radio1
+        {
+            width: 65px;
+        }
+        #Radio2
+        {
+            width: 73px;
+            margin-left: 69px;
+        }
+        .style6
+        {
+            width: 504px;
+            height: 42px;
+        }
+        .style7
+        {
+            height: 42px;
+        }
+        #Checkbox2
+        {
+            width: 18px;
+            margin-left: 14px;
+        }
+        .style10
+        {
+            width: 504px;
+            height: 49px;
+        }
+        .style11
+        {
+            height: 49px;
+        }
+        #Select1
+        {
+            width: 162px;
+            height: 28px;
+        }
+        #Select2
+        {
+            width: 127px;
+            height: 21px;
+        }
+        #Select3
+        {
+            width: 145px;
+            height: 70px;
+        }
+        #Radio3
+        {
+            width: 23px;
+        }
+        #Radio4
+        {
+            width: 24px;
+            margin-left: 39px;
+        }
+        .style14
+        {
+            width: 504px;
+            height: 99px;
+        }
+        .style15
+        {
+            height: 99px;
+        }
+        #TextArea2
+        {
+            height: 82px;
+            width: 222px;
+        }
+        .style16
+        {
+            width: 504px;
+            height: 126px;
+        }
+        .style17
+        {
+            height: 126px;
+        }
+        #TextArea1
+        {
+            height: 123px;
+            width: 218px;
+        }
+        #Button1
+        {
+            margin-left: 76px;
+        }
+        #Checkbox3
+        {
+            margin-left: 17px;
+        }
+        .style18
+        {
+            width: 504px;
+            height: 39px;
+        }
+        .style19
+        {
+            height: 39px;
+        }
+        .style20
+        {
+            width: 504px;
+            height: 40px;
+        }
+        .style21
+        {
+            height: 40px;
+        }
+        .style22
+        {
+            width: 504px;
+            height: 37px;
+        }
+        .style23
+        {
+            height: 37px;
+        }
+        .style24
+        {
+            width: 504px;
+            height: 31px;
+        }
+        .style25
+        {
+            height: 31px;
+        }
+        .style28
+        {
+            width: 504px;
+            height: 34px;
+        }
+        .style29
+        {
+            height: 34px;
+        }
+        .style30
+        {
+            width: 504px;
+            height: 33px;
+        }
+        .style31
+        {
+            height: 33px;
+        }
+        #Reset1
+        {
+            margin-left: 132px;
+        }
+        #Checkbox4
+        {
+            width: 21px;
+            margin-left: 13px;
+        }
+        #Text3
+        {
+            width: 134px;
+        }
+        #Text2
+        {
+            width: 134px;
+        }
+        #Password2
+        {
+            width: 134px;
+        }
+        #Password
+        {
+            width: 130px;
+            height: 25px;
+        }
+        #username
+        {
+            width: 128px;
+        }
+        #Checkbox5
+        {
+            width: 18px;
+            margin-left: 15px;
+        }
+        #email
+        {
+            height: 26px;
+        }
+        #phone
+        {
+            height: 22px;
+        }
+        .style34
+        {
+            width: 504px;
+            height: 27px;
+        }
+        .style35
+        {
+            height: 27px;
+        }
+        .style36
+        {
+            width: 504px;
+            height: 28px;
+        }
+        .style37
+        {
+            height: 28px;
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+
+      
+        var City = [
+        ["武汉", "襄阳", "随州", "荆门", "十堰市"],
+        ["长沙", "常德", " 株洲", "湘潭", "益阳"],
+        ["广州", "东莞", "深圳", "珠海", "佛山"],
+        ["成都", "攀枝花", "雅安", "绵阳", "德阳"]
+        
+        ];
+
+        function Reset1_onclick() {
+
+        }
+
+        function Submit1_onclick() {
+            var user_name = document.getElementById("username").value;
+            var _sex=document.getElementsByName("sex");
+            var show_sex="";
+            for(var i=0;i<_sex.length;i++)
+            {
+                if(_sex[i].checked)
+                {
+                    show_sex=_sex[i].value;
+                }
+            }
+            var province = document.getElementById("Select1");
+            var citys = document.getElementById("Select2");
+            for (var i = 0; i < province.length; i++) {
+                if (province.options[i].selected) {
+                    var province_name = province.options[i].value + "省";
+                }
+            }
+
+            var city_name = City[province.selectedIndex - 1][citys.selectedIndex - 1] + "市\n";
+            var emil_name = "电邮：" + document.getElementById("email").value+"\n";
+            var phone_number = "手机号：" + document.getElementById("phone").value + "\n";
+            var spcial = "专业擅长:" + GetMultiSelectValue("Select3") + "\n";
+            var likes = "业余爱好:" + getValue("hobby") + "\n";
+            var photo = "个人照片：" + document.getElementById("File1").value + "\n";
+            var birth = "出生年月：" + document.getElementById("Text4").value + "\n";
+            var more = "备注信息：" + document.getElementById("TextArea1").value+"\n";
+            var showString = "用户名:" + user_name+"\n"+"性别:"+show_sex+"\n"+"籍贯:"+province_name+city_name+emil_name+phone_number+spcial+likes+photo+birth+more;
+            alert(showString);
+        }
+        function changeProvince() {
+            var province = document.getElementById("Select1");
+            var city = document.getElementById("Select2");
+            var provinceCity = City[province.selectedIndex - 1];
+            city.length = 1;
+            for (var i = 0; i < provinceCity.length; i++) {
+                city.options.add(new Option(provinceCity[i],provinceCity[i]));
+            }
+
+        }
+        function GetMultiSelectValue(selectId) {
+            var obj = document.getElementById(selectId);
+            var str="";
+            for (var j = 0; j < obj.length; j++) { 
+                if(obj.options[j].selected) {
+                    str+=obj.options[j].value+",";
+                }
+            }
+         
+            str=str.substring(0,str.length-1);
+         
+            return str;
+        }
+        function getValue(CheckBoxName) {
+            var obj = document.getElementsByName(CheckBoxName);
+            var str = "";
+            for (var j = 0; j < obj.length; j++) {
+                if (obj[j].checked) {
+                    str += obj[j].value + ",";
+                }
+            }
+
+            str = str.substring(0, str.length - 1);
+
+            return str;
+        }
+        function changefont() {
+            var obj = document.getElementById("email");
+            obj.value = "";
+            obj.style.color = "Black";
+            obj.style.fontStyle = "normal";
+        }
+        function show() {
+            var obj = document.getElementById("message1");
+            if(obj.innerHTML.length<6)
+
+            obj.innerHTML = "密码至少六位！";
+        }
+    </script>
+</head>
+<body style="height: 797px">
+
+    
+  
+ <p align="center"><font size="7" color="red"  > 请输入个人信息</font></p>
+
+    <table style="width: 100%; height: 667px;">
+        
+        <tr>
+            <td align="right" class="style1">
+                用户名：</td>
+            <td>
+                <input id="username" type="text" /></td>
+        </tr>
+        <tr>
+            <td align="right" class="style20">
+                密码：</td>
+               
+            <td class="style21">
+                <input id="Password" type="password" onmouseout="show()" /> </td>
+               
+                
+        </tr>
+        <tr>
+            <td align="right" class="style22">
+                确认密码：</td>
+            <td class="style23">
+                <input id="Password2" type="password" /></td>
+        </tr>
+        <tr>
+            <td align="right" class="style24">
+                性别：</td>
+            <td class="style25" >
+                <input id="Radio3"  name="sex" type="radio"  checked="checked" value="男" />男
+                <input id="Radio4"  name="sex" type="radio" value="女"   />女</td>
+        </tr>
+        <tr>
+            <td align="right" class="style34">
+                籍贯：</td>
+            <td class="style35">
+                <select id="Select1" name="D2" onchange="changeProvince()">
+                    <option value="请选择">请选择</option>
+                    <option value="湖北">湖北</option>
+                    <option value="湖南">湖南</option>
+                    <option value="广东">广东</option>
+                    <option value="四川">四川</option>
+                </select>省
+                <select id="Select2" name="D3">
+                   <option value="0">请选择</option>
+
+                </select>
+                市</td>
+        </tr>
+        <tr>
+            <td align="right" class="style36">
+                Email：</td>
+            <td class="style37">
+                <input id="email" type="text"  style="color:Gray; font-style: italic;"  
+                    value="如123456@163.com"  onfocus="changefont()" /></td>
+        </tr>
+        <tr>
+            <td align="right" class="style28">
+                手机号：</td>
+            <td class="style29">
+                <input id="phone" type="text"  /></td>
+        </tr>
+        <tr>
+            <td align="right" class="style14">
+                专业擅长：</td>
+            <td class="style15">
+                <select id="Select3" multiple="multiple" name="D4" size="2">
+                    <option value="windows编程">windows编程</option>
+                    <option value="Java">Java</option>
+                    <option value="J2EE">J2EE</option>
+                    <option value="Android">Android</option>
+                    <option value="ios">ios</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td align="right" class="style6">
+                业余爱好：</td>
+            <td class="style7">
+                <input id="Checkbox1" name="hobby" type="checkbox" value="足球" />足球
+                <input id="Checkbox2" name="hobby" type="checkbox" value="篮球" />篮球              
+                <input id="Checkbox3" name="hobby" type="checkbox" value="排球"/>排球
+                <input id="Checkbox4" name="hobby" type="checkbox"value="歌唱" />歌唱
+                <input id="Checkbox5" name="hobby"type="checkbox" value="其它"/>其它</td>
+        </tr>
+        <tr>
+            <td align="right" class="style30">
+                个人照片：</td>
+            <td class="style31">
+                <input id="File1" type="file"  align="left" /></td>
+        </tr>
+        <tr>
+            <td align="right" class="style18">
+                出生年月：</td>
+            <td class="style19">
+                <input id="Text4" type="text" /></td>
+        </tr>
+        <tr>
+            <td align="right" class="style16">
+                备注信息：</td>
+            <td class="style17">
+                <textarea id="TextArea1" rows="10" name="S1" ></textarea></td>
+        </tr>
+        <tr>
+            <td align="right" class="style10">
+                </td>
+            <td class="style11">
+                <input id="Submit1" type="submit" value="提交" onclick="return Submit1_onclick()" />
+                <input id="Reset1" type="reset" value="重填" onclick="return Reset1_onclick()" /></td>
+        </tr>
+       
+        </table>
+
+    
+  
+
+</body>
+</html>
